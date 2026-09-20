@@ -885,6 +885,130 @@ export interface Database {
         Insert: never;
         Update: never;
       };
+      hr_departments: {
+        Row: {
+          id: string;
+          institution_id: string;
+          parent_id: string | null;
+          code: string;
+          name: string;
+          description: string | null;
+          level: number;
+          is_active: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          institution_id: string;
+          parent_id?: string | null;
+          code: string;
+          name: string;
+          description?: string | null;
+          level?: number;
+          is_active?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["hr_departments"]["Insert"]>;
+      };
+      hr_positions: {
+        Row: {
+          id: string;
+          institution_id: string;
+          code: string;
+          name: string;
+          description: string | null;
+          category: string | null;
+          is_active: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          institution_id: string;
+          code: string;
+          name: string;
+          description?: string | null;
+          category?: string | null;
+          is_active?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["hr_positions"]["Insert"]>;
+      };
+      hr_staff: {
+        Row: {
+          id: string;
+          institution_id: string;
+          profile_id: string | null;
+          staff_number: string;
+          hire_date: string;
+          status: "active" | "on_leave" | "terminated" | "retired";
+          employment_type: string | null;
+          personal_email: string | null;
+          personal_phone: string | null;
+          address: string | null;
+          birth_date: string | null;
+          birth_place: string | null;
+          gender: string | null;
+          nationality: string | null;
+          marital_status: string | null;
+          emergency_contact_name: string | null;
+          emergency_contact_phone: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          institution_id: string;
+          profile_id?: string | null;
+          staff_number: string;
+          hire_date?: string;
+          status?: string;
+          employment_type?: string | null;
+          personal_email?: string | null;
+          personal_phone?: string | null;
+          address?: string | null;
+          birth_date?: string | null;
+          birth_place?: string | null;
+          gender?: string | null;
+          nationality?: string | null;
+          marital_status?: string | null;
+          emergency_contact_name?: string | null;
+          emergency_contact_phone?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["hr_staff"]["Insert"]>;
+      };
+      hr_assignments: {
+        Row: {
+          id: string;
+          staff_id: string;
+          department_id: string;
+          position_id: string | null;
+          start_date: string;
+          end_date: string | null;
+          is_primary: boolean;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          staff_id: string;
+          department_id: string;
+          position_id?: string | null;
+          start_date?: string;
+          end_date?: string | null;
+          is_primary?: boolean;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["hr_assignments"]["Insert"]>;
+      };
     };
     Views: Record<string, never>;
     Functions: {

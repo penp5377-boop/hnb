@@ -71,6 +71,10 @@ export const PERMISSIONS = [
   "audit.view",
   "settings.view",
   "settings.manage",
+  "hr.view",
+  "hr.create",
+  "hr.update",
+  "hr.delete",
 ] as const;
 
 export type Permission = (typeof PERMISSIONS)[number];
@@ -81,6 +85,7 @@ export const ROLES = [
   "administration",
   "scolarite",
   "comptabilite",
+  "rh",
   "formateur",
   "etudiant",
 ] as const;

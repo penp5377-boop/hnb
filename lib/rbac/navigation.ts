@@ -18,6 +18,10 @@ import {
   CalendarRange,
   Layers,
   BarChart3,
+  UsersRound,
+  Briefcase,
+  Building2,
+  UserCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -246,6 +250,41 @@ export const NAV_SECTIONS: NavSection[] = [
         href: "/app/admin/expenses",
         icon: Receipt,
         permissions: ["expenses.view"],
+      },
+    ],
+  },
+  {
+    label: "Ressources Humaines",
+    items: [
+      {
+        label: "Tableau RH",
+        href: "/app/hr/dashboard",
+        icon: BarChart3,
+        permissions: ["hr.view"],
+      },
+      {
+        label: "Directions & Services",
+        href: "/app/hr/departments",
+        icon: Building2,
+        permissions: ["hr.view"],
+      },
+      {
+        label: "Postes & Fonctions",
+        href: "/app/hr/positions",
+        icon: Briefcase,
+        permissions: ["hr.view"],
+      },
+      {
+        label: "Personnel",
+        href: "/app/hr/staff",
+        icon: UsersRound,
+        permissions: ["hr.view"],
+      },
+      {
+        label: "Affectations",
+        href: "/app/hr/assignments",
+        icon: UserCheck,
+        permissions: ["hr.view"],
       },
     ],
   },

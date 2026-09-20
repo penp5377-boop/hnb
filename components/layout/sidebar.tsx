@@ -18,8 +18,9 @@ export function Sidebar({
   const pathname = usePathname();
   const { permissions, roles } = useAuth();
 
-  const isStudentOnly = roles.includes("etudiant") && !roles.some((r) => ["super_admin", "direction", "administration", "scolarite", "comptabilite"].includes(r));
-  const isTeacherOnly = roles.includes("formateur") && !roles.some((r) => ["super_admin", "direction", "administration", "scolarite", "comptabilite"].includes(r));
+  const adminLikeRoles = ["super_admin", "direction", "administration", "scolarite", "comptabilite", "rh"];
+  const isStudentOnly = roles.includes("etudiant") && !roles.some((r) => adminLikeRoles.includes(r));
+  const isTeacherOnly = roles.includes("formateur") && !roles.some((r) => adminLikeRoles.includes(r));
 
   const canSeeItem = (itemPermissions?: string[]) => {
     if (!itemPermissions || itemPermissions.length === 0) return true;
